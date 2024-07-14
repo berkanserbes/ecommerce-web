@@ -4,6 +4,9 @@ const express = require("express");
 const app = express();
 
 const connectDB = require("./configs/db");
+const { registerRoute, loginRoute } = require("./routes");
+
+app.use("/api/authentication", registerRoute);
 
 const PORT = process.env.PORT || 4000;
 
