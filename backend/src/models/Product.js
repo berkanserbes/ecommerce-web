@@ -1,4 +1,4 @@
-const { Schema } = require("mongoose");
+const { Schema, default: mongoose } = require("mongoose");
 
 const productSchema = new Schema(
   {
@@ -16,6 +16,7 @@ const productSchema = new Schema(
       type: Number,
       required: true,
       min: [0, "Stock quantity cannot be negative"],
+      default: 5,
     },
     price: {
       type: Number,

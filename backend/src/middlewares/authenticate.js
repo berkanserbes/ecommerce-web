@@ -17,7 +17,7 @@ const authenticateMiddleware = (req, res, next) => {
     if (err) {
       return res.status(401).json({ message: "Invalid token" });
     }
-
+    console.log("Decoded:", decoded);
     req.user = decoded;
     next();
   });
