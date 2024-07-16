@@ -9,6 +9,7 @@ const { registerRoute, loginRoute } = require("./routes");
 app.use(express.json());
 
 app.use("/api/authentication", registerRoute);
+app.use("/api/authentication", loginRoute);
 
 const PORT = process.env.PORT || 4000;
 
