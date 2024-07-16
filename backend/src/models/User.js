@@ -24,7 +24,7 @@ const userSchema = new Schema(
       required: true,
       trim: true,
       minLength: [6, "Password must be at least 6 characters long"],
-      maxLength: [30, "Password must be less than 30 characters long"],
+      maxLength: [60, "Password must be less than 60 characters long"],
     },
     phone: {
       type: String,
