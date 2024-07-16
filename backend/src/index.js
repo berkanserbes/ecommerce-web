@@ -5,11 +5,13 @@ const app = express();
 
 const connectDB = require("./configs/db");
 const { registerRoute, loginRoute } = require("./routes");
+const authenticateMiddleware = require("./middlewares/authenticate");
 
 app.use(express.json());
 
 app.use("/api/authentication", registerRoute);
 app.use("/api/authentication", loginRoute);
+app.use(authenticateMiddleware);
 
 const PORT = process.env.PORT || 4000;
 
