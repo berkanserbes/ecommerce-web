@@ -40,7 +40,6 @@ const Register: React.FC = () => {
         values
       );
       console.log(result);
-      // Formu sıfırla
       resetForm();
     } catch (err) {
       console.error(err);
@@ -165,7 +164,7 @@ const Register: React.FC = () => {
                     <ErrorMessage
                       name="confirmPassword"
                       component="div"
-                      className="text-red-600 text-sm"
+                      className="text-red- text-sm"
                     />
                   </div>
                   <button

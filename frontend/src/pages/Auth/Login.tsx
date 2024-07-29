@@ -11,9 +11,10 @@ interface ILoginValues {
 
 interface ILoginProps {
   setIsAuthenticated: (auth: boolean) => void;
+  setIsAdmin: (admin: boolean) => void;
 }
 
-const Login: React.FC<ILoginProps> = ({ setIsAuthenticated }) => {
+const Login: React.FC<ILoginProps> = ({ setIsAuthenticated, setIsAdmin }) => {
   const navigate = useNavigate();
 
   const initialValues: ILoginValues = {
@@ -35,9 +36,16 @@ const Login: React.FC<ILoginProps> = ({ setIsAuthenticated }) => {
         "http://localhost:4000/api/authentication/login",
         values
       );
+
       if (result.status === 200) {
         setIsAuthenticated(true);
-        navigate("/");
+        console.log(result.data.user.role);
+        if (result.data.user.role === "admin") {
+          setIsAdmin(true);
+          navigate("/admin-dashboard");
+        } else {
+          navigate("/");
+        }
       }
     } catch (err) {
       console.error(err);
