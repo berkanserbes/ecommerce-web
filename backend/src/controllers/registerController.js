@@ -3,7 +3,7 @@ const { checkUserExists } = require("../utils/index");
 const User = require("../models/User");
 
 const register = async (req, res) => {
-  const { email, password, surname, name } = req.body;
+  const { email, password, surname, name, role } = req.body;
 
   if (await checkUserExists(email)) {
     return res.status(400).json({ message: "User already exists" });
@@ -17,6 +17,7 @@ const register = async (req, res) => {
     name,
     surname,
     password: hashedPassword,
+    role,
   }).save(); // or User.create({ email, password })
   console.log(newUser);
 
