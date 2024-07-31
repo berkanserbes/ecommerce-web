@@ -164,7 +164,7 @@ const Register: React.FC = () => {
                     <ErrorMessage
                       name="confirmPassword"
                       component="div"
-                      className="text-red- text-sm"
+                      className="text-red-600 text-sm"
                     />
                   </div>
                   <button
