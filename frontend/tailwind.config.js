@@ -9,6 +9,7 @@ export default {
         success: "#ffffff",
         info: "#ffffff",
         danger: "#ffffff",
+        whitesmoke: "#f5f5f5",
       },
     },
   },

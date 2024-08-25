@@ -4,7 +4,7 @@ import Register from "@pages/Auth/Register";
 import Login from "@pages/Auth/Login";
 import PrivateRoute from "./utils/router/PrivateRoute";
 import AdminRoute from "./utils/router/AdminRoute";
-import AdminDashboard from "@pages/Admin/AdminDasboard";
+import AdminDashboard from "@pages/Admin/AdminDashboard";
 import Home from "@pages/Home/Home";
 
 const App: React.FC = () => {
